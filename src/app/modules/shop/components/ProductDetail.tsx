@@ -54,7 +54,7 @@ const ProductDetail = () => {
     // handle navigate
     const handleAddToBag = () => {
         setIsLoading(true);
-        if (productObj) {
+        if (productObj && quantity > 0) {
             dispatch(addToCart({
                 product: productObj,
                 quantity: quantity,
@@ -65,6 +65,9 @@ const ProductDetail = () => {
             setTimeout(() => {
                 setIsLoading(false);
             }, 3000)
+        } else {
+            ErrorAlert({text: "Please select product quantity."});
+            setIsLoading(false);
         }
     };
 

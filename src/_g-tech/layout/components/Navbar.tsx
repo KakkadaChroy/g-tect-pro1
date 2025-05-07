@@ -7,7 +7,7 @@ import Container from "../../../app/modules/ui/Container";
 import { Menu, X } from "lucide-react";
 import { NavLinkModel } from "../../helpers/ts/model";
 
-// Define props interfaces for our mobile components
+
 interface MobileNavMenuProps {
     navItems: NavLinkModel[];
     onItemClick: () => void;
@@ -31,7 +31,7 @@ const Navbar = () => {
                     <div className="w-full flex justify-between items-center">
                         <NavLink to={`/home`} className="text-[24px] font-semibold">Company Name</NavLink>
 
-                        {/* Desktop Menu - Hidden on mobile */}
+                        {/* Desktop Menu */}
                         <div className="hidden md:flex items-center">
                             <ul className="flex items-center gap-10">
                                 <NavMenu navItems={navLinks} />
@@ -39,7 +39,7 @@ const Navbar = () => {
                             </ul>
                         </div>
 
-                        {/* Mobile Menu Button - Only visible on mobile */}
+                        {/* Mobile Menu Button */}
                         <button
                             className="block md:hidden text-dark"
                             onClick={toggleMobileMenu}
@@ -50,7 +50,7 @@ const Navbar = () => {
                     </div>
                 </nav>
 
-                {/* Mobile Menu - Only visible when open on mobile */}
+                {/* Mobile Menu */}
                 {mobileMenuOpen && (
                     <div className="md:hidden w-full bg-white py-4 border-t">
                         <div className="flex flex-col gap-6">
@@ -94,7 +94,6 @@ const MobileNavMenu: React.FC<MobileNavMenuProps> = ({ navItems, onItemClick }) 
 
 // Mobile
 const MobileNavbarSearchMenu: React.FC<MobileNavbarSearchMenuProps> = ({ onItemClick }) => {
-    // This is a simplified version that will render the search components adapted for mobile
     return (
         <div className="w-full">
             <NavbarSearchMenu />

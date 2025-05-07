@@ -54,8 +54,8 @@ const PromotionsSection: React.FC = () => {
     ];
 
     // Handle navigation
-    const handleNavigate = (link: string) => {
-        navigate(`/${link}`);
+    const handleNavigate = () => {
+        navigate(`/shop`);
     };
 
     return (
@@ -80,7 +80,7 @@ const PromotionsSection: React.FC = () => {
                                 <p className="text-gray-700 mb-6">{promotion.description}</p>
                                 <div>
                                     <button
-                                        onClick={() => handleNavigate(promotion.link)}
+                                        onClick={handleNavigate}
                                         className="w-[200px] h-[52px] px-6 bg-primary text-[18px] text-white rounded hover:bg-primary/85 transition-colors"
                                     >
                                         {promotion.buttonText}
