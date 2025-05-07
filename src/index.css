@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+}
+
+@layer components {
+    .nav-active {
+        @apply text-success;
+    }
+    .custom-shadow {
+        box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+    .custom-font {
+        font-style: italic;
+    }
+}
